@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   const { email, link } = req.query;
 
   // 클릭 정보 Zapier로 전송
-  await fetch("https://hooks.zapier.com/hooks/catch/당신의_webhook_URL", {
+  await fetch("https://hooks.zapier.com/hooks/catch/22340938/2cco6m5/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
