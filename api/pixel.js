@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   });
 
   // 🚀 Zapier로 데이터 전송
-  await fetch("https://hooks.zapier.com/hooks/catch/22340938/2cco6m5/", {
+  await fetch("https://hooks.zapier.com/hooks/catch/22340938/2cnt4rf/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
