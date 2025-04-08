@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   const link = decodeURIComponent(req.query.link || "");
 
   // Google Apps Script Web App으로 클릭 정보 전송
-  await fetch("https://script.google.com/macros/s/AKfycbyX7nzydkzzdKhKigLS00K80uBkjL1lbFnlnknwrL-VgIXqG1rFM9jqlEJRtLKCaSfdhg/exec", {
+  await fetch("https://script.google.com/macros/s/AKfycbwZeoggsdWfDXin_hkG8ovALdoRQ_lIMZ0U_GvEOJ8FK4qiocJEtRaJYlxlm3eWP1r_ag/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
