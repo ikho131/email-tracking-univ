@@ -1,14 +1,14 @@
 export default async function handler(req, res) {
   const { email, company, university, t } = req.query;
 
-  console.log("📩 이메일 열람 기록:", {
+  console.log("📬 이메일 열람 기록:", {
     university,
     company,
     email,
     time: t,
   });
 
-  await fetch("https://script.google.com/macros/s/AKfycbwHble9tzrRcWq7tGZg8lIJVXK22OCHMNig5HE_bmmzoJamMfwtG2DhIKPg3E3ztsGtkg/exec", {
+  await fetch("https://script.google.com/macros/s/AKfycbyqr2ScBox4QWF0CfI7drVvCB-BZZILeyUsDwYb4MzJiOf4cgFuPibY4WdXXk7K8iv9dw/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -21,9 +21,10 @@ export default async function handler(req, res) {
   });
 
   const imageBuffer = Buffer.from(
-    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR42mP8z8wEAApIBbzV+4Z6YAAAAAElFTkSuQmCC",
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8zwEAApIBbzv+4Z6YAAAAAElFTkSuQmCC",
     "base64"
   );
+
   res.setHeader("Content-Type", "image/png");
   res.end(imageBuffer);
 }
