@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   const { email, company, university, t } = req.query;
 
-  // ✅ Vercel 로그 확인용 콘솔 로그 (순서: 대학교 → 부서 → 이메일 → 시간)
+  // ✅ 로그 출력 (Vercel console에서 확인)
   console.log("📩 이메일 열람 기록:", {
     university,
     company,
@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     time: t,
   });
 
-  // 🚀 Zapier로 데이터 전송
-  await fetch("https://hooks.zapier.com/hooks/catch/22340938/2cnt4rf/", {
+  // ✅ Google Apps Script Web App으로 전송
+  await fetch("https://script.google.com/macros/s/AKfycbwZeoggsdWfDXin_hkG8ovALdoRQ_lIMZ0U_GvEOJ8FK4qiocJEtRaJYlxlm3eWP1r_ag/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -18,11 +18,11 @@ export default async function handler(req, res) {
       university,
       company,
       email,
-      time: t,
+      time: t || new Date().toISOString(),
     }),
   });
 
-  // 🖼️ 추적용 1픽셀 이미지 응답
+  // 🖼️ 1픽셀 추적 이미지 응답
   const imageBuffer = Buffer.from(
     "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR42mP8xwEAApIBzV+4Z6YAAAAASUVORK5CYII=",
     "base64"
