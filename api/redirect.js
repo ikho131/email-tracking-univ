@@ -2,8 +2,8 @@ export default async function handler(req, res) {
   const { email, univ, company, type } = req.query;
   const link = decodeURIComponent(req.query.link || "");
 
-  // 🔗 Google Apps Script Web App으로 클릭 정보 전송
-  await fetch("https://script.google.com/macros/s/AKfycbwPrntJX1CW4V5JRwLWSA57xw5NaTxAWsd9kNgBFp4L1ofrJn5f2Tt_P0RTdx3bbxqpMw/exec", {
+  // 📨 Google Apps Script Web App으로 클릭 정보 전송
+  await fetch("https://script.google.com/macros/s/AKfycbzsgqBmDfU93Dn-KwzW4EPukxC3q-X4p-RyTzoM7AaODT5n4pZitfsbBHbI3Q3ZVidb/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     }),
   });
 
-  // 📦 원래 링크로 리디렉션
+  // 🔗 원래 링크로 리디렉션
   res.writeHead(302, { Location: link });
   res.end();
 }
