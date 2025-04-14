@@ -1,11 +1,12 @@
 export default async function handler(req, res) {
   const { email, university, company, type } = req.query;
-  const link = decodeURIComponent(req.query.link || "");
+  const linkRaw = req.query.link || "";
+  const link = decodeURIComponent(decodeURIComponent(linkRaw)); // ✅ 이중 디코딩
 
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbwPZeTa9aALr3scgnGjYcvC9n30SbWob2wE13ICtrReze3jNLC0QGr4tGZtWb7J5bNBw/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbwmec_CUPJBsO-Pg_EaOBphtgLpdHXbmagh6uW7OzSWwJxW4gdsQqZI7jyMJpp-1Olhwg/exec";
 
   if (!scriptUrl || !link) {
-    return res.status(400).json({ error: "Invalid request." });
+    return res.status(400).json({ error: "Invalid request. Missing scriptUrl or link." });
   }
 
   try {
