@@ -4,8 +4,6 @@ export default async function handler(req, res) {
 
   // 도메인별 Google Apps Script Web App URL 매핑
   const scriptMap = {
-    "threeline.ikho@gmail.com": "https://script.google.com/macros/s/AKfycbxiPqGMedWNa5HgKBpjdmPPU0WysW7jHA_jqZLS_FofkrHwNf-_3n3LXHo6P4t4pWoT/exec",
-    "ikho.3lineb@gmail.com": "https://script.google.com/macros/s/AKfycbwk9Ldq3oPAtCp1Mp6qgH4ZB_KcGfsi-YXbj9C6qspoqG6RuPsiX88QQvk92FwQ8iNW/exec",
     "ikho.3line@gmail.com": "https://script.google.com/macros/s/AKfycbwPZeIa9aA1r3scgnGjYevC9n3Q5ObWo2wEI31CrtReze3jNLC0QGr4tGZIWb7JShBW/exec"
   };
 
