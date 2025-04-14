@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   const { email, univ, company, type } = req.query;
   const link = decodeURIComponent(req.query.link || "");
 
-  await fetch("https://script.google.com/macros/s/AKfycbwk9Ldq3oPAtCp1Mp6qgH4ZB_KcGfsi-YXbj9C6qspoqG6RuPsiX88QQvk92FwQ8iNW/exec", {
+  await fetch("https://script.google.com/macros/s/AKfycbxiPqGMedWNa5HgKBpjdmPPU0WysW7jHA_jqZLS_FofkrHwNf-_3n3LXHo6P4t4pWoT/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
