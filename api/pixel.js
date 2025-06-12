@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   const { email, university, company, type, sentAt } = req.query;
 
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbwqe2O1MprupakJOWeKGLg3m-uIoWAFNTWjLJV3TJWIEEhwDtlXIHG1kRVjSEcKkPQ_JA/exec";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbwJquRzziEIA0YhGB9df6h7gHGPqdC94jAGUfxMNKAZcUadxyutEfOTEsIMHTvNPvwwcg/exec";
 
   console.log("📩 [PIXEL] 요청 수신됨");
   console.log("받은 쿼리값:", { email, university, company, type, sentAt });
